@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+.container {
+  width: 90%;
+  height: auto;
+  perspective: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 20px; */
+  background-color: red;
+}
+
+/** all face of cube */
+.face {
+  width: 100%;
+  height: auto;
+  background: skyblue;
+  border-radius: 16px;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); */
+}
+.front {
+  transform: translateZ(1px);
+}
+.back {
+  transform: translateZ(-1px) rotateY(180deg);
+}
+/* @keyframes turn {
+  from {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+} */
+.cube {
+  width: 100%;
+  /* height: fit-content; */
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 0, 0, 45deg);
+  transition: 0.4s ease;
+  /* background-color: red; */
+  /* padding: 10px; */
+  /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); */
+  /* animation: turn 1s linear infinite; */
+}
+/* @media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none;
+    transform: rotate3d(1, 1, 0, 45deg);
+  }
+} */
+
+.grid-item {
+  background-color: rgb(233, 233, 233);
+  /* border: 1px solid rgb(207, 202, 202); */
+  padding: 20px;
+  border-radius: 12px;
+  width: fit-content;
+  /* box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.178); */
+}
+.grid-item > p:nth-child(2) {
+  font-weight: bold;
+}
